@@ -1,6 +1,31 @@
 * Web fundamentals
-** Tutorial
-*** Connect via VPN: flag{connection_verified}
+** Tutorial: Connect via VPN: flag{connection_verified}
 ** Introductory Networking
-*** 
-
+*** OSI Model
+    | Layer            | Used for                              | Example                                         |
+    |------------------+---------------------------------------+-------------------------------------------------|
+    | (7) Application  | Applications                          | FTP                                             |
+    | (6) Presentation | Standardise format                    | Telnet                                          |
+    | (5) Session      | Manage connection                     | SOCKS                                           |
+    | (4) Transport    | Protocol for data sending             | TCP/UDP                                         |
+    | (3) Network      | Logical addressing                    | IPv4/IPv6                                       |
+    | (2) Data Link    | Physical addressing, corruption check | Ethernet                                        |
+    | (1) Physical     | Convert binary into/from signals      | Ethernet physical layer (100BASE-T, 1000BASE-T) |
+**** Encapsulation
+     (@7) L7Header + Data
+     (@6) L6Header + Data
+     (@5) L5Header + Data
+     (@4) L4Header + Data (Segments (TCP) / Datagrams (UDP))
+     (@3) L3Header + Data (Packets)
+     (@2) L2Header + Data (Frames) + L2Trailer
+     (@1) Data Stream (Bits)
+*** TCP/IP Model (5 layers version: NI -> Data Link + Physical Layer)
+| OSI Layer    | TCP/IP Layer      |
+|--------------+-------------------|
+| Application  | Application       |
+| Presentation | Application       |
+| Session      | Application       |
+| Transport    | Transport         |
+| Network      | Internet          |
+| Data Link    | Network Interface |
+| Physical     | Network Interface |

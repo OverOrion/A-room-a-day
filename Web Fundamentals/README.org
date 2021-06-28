@@ -12,13 +12,13 @@
     | (2) Data Link    | Physical addressing, corruption check | Ethernet                                        |
     | (1) Physical     | Convert binary into/from signals      | Ethernet physical layer (100BASE-T, 1000BASE-T) |
 **** Encapsulation
-    7) [@7] L7Header + Data
-    6) [@6] L6Header + Data
-    5) [@5] L5Header + Data
-    4) [@4] L4Header + Data (Segments (TCP) / Datagrams (UDP))
-    3) [@3] L3Header + Data (Packets)
-    2) [@2] L2Header + Data (Frames) + L2Trailer
-    1) [@1] Data Stream (Bits)
+    7) L7Header + Data
+    6) L6Header + Data
+    5) L5Header + Data
+    4) L4Header + Data (Segments (TCP) / Datagrams (UDP))
+    3) L3Header + Data (Packets)
+    2) L2Header + Data (Frames) + L2Trailer
+    1) Data Stream (Bits)
 *** TCP/IP Model (5 layers version: NI -> Data Link + Physical Layer)
 | OSI Layer    | TCP/IP Layer      |
 |--------------+-------------------|

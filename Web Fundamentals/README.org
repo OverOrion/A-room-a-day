@@ -12,7 +12,7 @@
     | (2) Data Link    | Physical addressing, corruption check | Ethernet                                        |
     | (1) Physical     | Convert binary into/from signals      | Ethernet physical layer (100BASE-T, 1000BASE-T) |
 **** Encapsulation
-     1) [@7] L7Header + Data
+    1) [@7] L7Header + Data
     6) [@6] L6Header + Data
     5) [@5] L5Header + Data
     4) [@4] L4Header + Data (Segments (TCP) / Datagrams (UDP))

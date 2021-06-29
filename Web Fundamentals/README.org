@@ -1,6 +1,6 @@
 * Web fundamentals
 ** Tutorial: Connect via VPN: flag{connection_verified}
-** Introductory Networking
+** [[https://tryhackme.com/room/introtonetworking][Introductory Networking]]
 *** OSI Model
     | Layer            | Used for                              | Example                                         |
     |------------------+---------------------------------------+-------------------------------------------------|
@@ -29,3 +29,55 @@
 | Network      | Internet          |
 | Data Link    | Network Interface |
 | Physical     | Network Interface |
+*** Basic tools
+    | Name       | Used for                           |
+    |------------+------------------------------------|
+    | ping       | Check whether a host is online     |
+    | traceroute | See the path a request takes       |
+    | whois      | Get information regarding a domain |
+    | dig        | Perform DNS lookups                |
+
+** [[https://tryhackme.com/room/webfundamentals][Web Fundamentals]]
+*** HTTP requests
+**** 9 methods
+     | Name    | Function                                                   |
+     |---------+------------------------------------------------------------|
+     | GET     | Retrieve content                                           |
+     | HEAD    | Request headers                                            |
+     | POST    | Send content                                               |
+     | PUT     | Idempotent POST                                            |
+     | DELETE  | Delete a resource                                          |
+     | CONNECT | Start a two-way communications with the requested resource |
+     | OPTIONS | Request permitted communication options                    |
+     | TRACE   | Debugging (echoes back input)                              |
+     | PATCH   | Partial resource modification                              |
+**** Responses
+***** [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418][418 I'm a teapot]]
+*** Cookies
+**** Basic client-side data storage
+**** Cookies are sent with every request, so they can worsen performance (especially for mobile data connections). Modern APIs for client storage are the Web Storage API (localStorage and sessionStorage) and IndexedDB.
+*** Mini CTF
+**** What's the GET flag?
+#+BEGIN_SRC sh
+  curl http://10.10.165.133:8081/ctf/get
+  thm{162520bec925bd7979e9ae65a725f99f}
+#+END_SRC
+**** What's the POST flag?
+#+BEGIN_SRC sh
+  curl -d "flag_please" http://10.10.165.133:8081/ctf/post
+  thm{3517c902e22def9c6e09b99a9040ba09}
+#+END_SRC
+**** What's the "Get a cookie" flag?
+#+BEGIN_SRC sh
+  curl http://10.10.165.133:8081/ctf/getcookie -c tmp
+  10.10.165.133   FALSE   /       FALSE   0       flag    thm{91b1ac2606f36b935f465558213d7ebd}
+#+END_SRC
+**** What's the "Set a cookie" flag?
+#+BEGIN_SRC sh
+  curl http://10.10.165.133:8081/ctf/sendcookie -b "flagpls"="flagpls"
+  thm{c10b5cb7546f359d19c747db2d0f47b3}
+#+END_SRC
+     
+
+
+     
